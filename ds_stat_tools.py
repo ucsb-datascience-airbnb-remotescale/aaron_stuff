@@ -1,0 +1,3 @@
+from ds_stat_tools_n import numerical
+from ds_stat_tools_c import categorical
+from ds_stat_tools_cn import numerocategorical
