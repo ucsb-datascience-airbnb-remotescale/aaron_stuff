@@ -1,3 +1,6 @@
 __pycache__/
 *.csv
 *.ods
+
+# Don't exclude csv files in data folder
+!data/
