@@ -51,6 +51,10 @@ def save_csv(filename, data):
         writer.writerows(data)
 
 def main():
+    # this function will read a raw data file in csv format
+    # it will write a data file that contains similar data, replacing the last
+    # 4 columns with 2 columns (mean and sstd of position) for each listing
+    # it sorts by mean position, best at the top, worst at the bottom
     id = "-1"
     hold = []
     positions = []

@@ -30,6 +30,9 @@ def make_numbers(arr):
     return output
 
 def do_nc():
+    # runs through a csv file, printing r^2 values between the
+    # columns with categorical data, and the position column
+    # it prints this
     t = csv_io.Table("mv.csv",True)
     print("loading position data")
     pos = t.load_column(65)
@@ -42,6 +45,9 @@ def do_nc():
         print(col,r2)
 
 def do_num():
+    # runs through a csv file, printing r^2 values between the
+    # columns with categorical data, and the position column
+    # it prints this
     t = csv_io.Table("mv.csv",True)
     print("loading position data")
     pos = t.load_column(65)
