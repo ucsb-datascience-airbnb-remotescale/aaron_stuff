@@ -1,3 +1,5 @@
+# provides an interface to csv files
+
 import csv
 
 class Table(object):
@@ -12,6 +14,7 @@ class Table(object):
                 output.append(row)
         return output
     def load_column(self, column):
+        # column starts counting from 0
         output = []
         with open(self.filename,"r",encoding="utf-8") as file:
             reader = csv.reader(file)
@@ -35,6 +38,8 @@ class Table(object):
                     return row
         return None
 
+# this save stuff
+# filename is a string, data is a 2D array
 def save_csv(filename, data):
     with open(filename,"w",encoding="utf-8") as file:
         file.truncate(0)

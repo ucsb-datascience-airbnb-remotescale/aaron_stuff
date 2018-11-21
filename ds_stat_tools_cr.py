@@ -1,6 +1,8 @@
 import numpy
 import category_map
 
+# maps categories to the mean of each category
+# finds and returns r^2
 def numerocategorical(x, y):
     xmap = category_map.category_map(x)
     org = []

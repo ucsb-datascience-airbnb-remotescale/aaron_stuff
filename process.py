@@ -3,6 +3,7 @@ import ds_stat_tools_n as dtn
 import ds_stat_tools_cr as dtcr
 
 def remove_absent(a,b):
+    # filters data, removing rows that have missing information
     ar = []
     br = []
     for i in range(len(a)):
@@ -15,6 +16,7 @@ def remove_absent(a,b):
     return [ar,br]
 
 def make_numbers(arr):
+    # converts a list of strings into a list of numbers
     output = []
     for elem in arr:
         hold = ""

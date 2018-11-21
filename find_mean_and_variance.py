@@ -2,6 +2,7 @@ import numpy as np
 import csv
 
 def find_mv(positions):
+    # returns sample mean and variance of given list
     m = np.mean(positions)
     if len(positions) < 3:
         return [m,0]
@@ -9,6 +10,8 @@ def find_mv(positions):
     return [m,v]
 
 def bad_sort(data,col):
+    # sorts 2D array data by column col
+    # this is a bad function, need to improve
     hold = data[:]
     p = []
     output = []
@@ -27,6 +30,8 @@ def bad_sort(data,col):
     return output
 
 def remove_zeros(data):
+    # removes datapoints with a variance of zero
+    # presumably, these datapoints cannot be trusted
     output = []
     for row in data:
         if row[-1] != 0:
@@ -34,6 +39,10 @@ def remove_zeros(data):
     return output
 
 def keep_low_variance(data):
+    # finds the mean and standard deviation of all the variances
+    # eliminates datapoints that have whose variance is "too big"
+    # "too big" means greater than one standard deviation below the mean
+    # of all the variances
     vars = []
     for row in data:
         vars.append(row[-1])
@@ -53,7 +62,7 @@ def save_csv(filename, data):
 def main():
     # this function will read a raw data file in csv format
     # it will write a data file that contains similar data, replacing the last
-    # 4 columns with 2 columns (mean and sstd of position) for each listing
+    # 4 columns with 2 columns (mean and variance of position) for each listing
     # it sorts by mean position, best at the top, worst at the bottom
     id = "-1"
     hold = []

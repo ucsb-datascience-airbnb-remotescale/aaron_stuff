@@ -1,3 +1,6 @@
+# creates a mapping from a set of categories to a set of integers
+# speeds up computation later
+
 def category_map(arr):
     categories = set(arr)
     i = 0
